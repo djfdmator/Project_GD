@@ -118,12 +118,12 @@ TextureImporter:
       name: "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_0"
       rect:
         serializedVersion: 2
-        x: 30
-        y: 21
-        width: 112
-        height: 126
+        x: 31
+        y: 22
+        width: 110
+        height: 124
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_1"
       rect:
         serializedVersion: 2
-        x: 167
-        y: 21
-        width: 138
-        height: 134
+        x: 168
+        y: 22
+        width: 136
+        height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_2"
       rect:
         serializedVersion: 2
-        x: 320
-        y: 21
-        width: 146
-        height: 146
+        x: 321
+        y: 22
+        width: 144
+        height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_3"
       rect:
         serializedVersion: 2
-        x: 478
-        y: 128
-        width: 142
-        height: 104
+        x: 479
+        y: 129
+        width: 140
+        height: 102
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_4"
       rect:
         serializedVersion: 2
-        x: 642
-        y: 25
-        width: 82
-        height: 114
+        x: 643
+        y: 26
+        width: 80
+        height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_5"
       rect:
         serializedVersion: 2
-        x: 496
-        y: 21
-        width: 105
-        height: 70
+        x: 742
+        y: 26
+        width: 94
+        height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -246,11 +246,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_6"
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 22
+        width: 103
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf4a770e9fcb694a8d6d3a0354831b7
+      internalID: -580107026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 462618c9d7cf70c46bb0c38dbc223c11
     internalID: 0
     vertices: []
     indices: 
@@ -258,7 +280,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_0": 6311639291512441211
       "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_1": 8911183324999488856
@@ -266,6 +290,7 @@ TextureImporter:
       "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_3": 3543846758774737430
       "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_4": 4347934105665434159
       "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_5": 3381284629394147981
+      "\uC9C4\uB354\uB9AC\uBE4C_\uC751\uC560_6": -580107026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
