@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour
 
     private Portal _portal;
 
+    private Vector3 _respawnPosition;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -66,6 +68,8 @@ public class PlayerController : MonoBehaviour
         moveState = new MoveState(this);
         airState = new AirState(this);
         climbState = new ClimbState(this);
+        
+        _respawnPosition  = transform.position;
     }
 
     void Start()
@@ -181,15 +185,17 @@ public class PlayerController : MonoBehaviour
     // 성공하면 true (일반 점프 대신 실행됨).
     public bool TryDropThrough()
     {
-        if (inputY >= 0) return false; // 아래키 안 눌림
+        if (inputY >= 0) 
+            return false; // 아래키 안 눌림
 
         // 발밑 발판 탐지
-        Collider2D platform = Physics2D.OverlapCircle(
-            groundCheck.position, groundCheckRadius, groundLayer);
-        if (platform == null) return false;
+        Collider2D platform = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (platform == null) 
+            return false;
 
         // 한방향 발판(PlatformEffector2D)일 때만 통과 허용
-        if (platform.GetComponent<PlatformEffector2D>() == null) return false;
+        if (platform.GetComponent<PlatformEffector2D>() == null) 
+            return false;
 
         coyoteCounter = 0;        // 뚫는 직후 공중에서 재점프 방지
         jumpBufferCounter = 0;
@@ -239,6 +245,17 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Portal"))
         {
             _portal = other.gameObject.GetComponent<Portal>();
+        }
+
+        if (other.CompareTag("Respawn"))
+        {
+            transform.position = _respawnPosition;
+        }
+
+        if (other.CompareTag("CheckPoint"))
+        {
+            _respawnPosition = other.transform.position;
+            other.gameObject.GetComponent<CheckPoint>().Set();
         }
     }
 
