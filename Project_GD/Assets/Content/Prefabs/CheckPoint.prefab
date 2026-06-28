@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckPoint
   _deadZone: {fileID: 2804552200339216398}
+  _collider2D: {fileID: 781715742600518953}
 --- !u!1 &8778651818723367197
 GameObject:
   m_ObjectHideFlags: 0

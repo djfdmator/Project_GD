@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     public Collider2D playerCol;
     [HideInInspector] public float inputX, inputY;
     [HideInInspector] public bool jumpPressed, jumpHeld;
+    [HideInInspector] public bool interactionPressed;
     [HideInInspector] public float defaultGravity;
     [HideInInspector] public bool facingRight = true;
 
@@ -53,7 +54,8 @@ public class PlayerController : MonoBehaviour
     public ClimbState climbState;
 
     private Portal _portal;
-
+    private Goal _goal;
+    
     private Vector3 _respawnPosition;
 
     void Awake()
@@ -112,6 +114,8 @@ public class PlayerController : MonoBehaviour
         // 점프 (컨트롤 키)
         jumpPressed = Input.GetKeyDown(KeyCode.LeftAlt);
         jumpHeld = Input.GetKey(KeyCode.LeftAlt);
+        
+        interactionPressed = Input.GetKeyDown(KeyCode.LeftControl);
     }
 
     void UpdateTimers()
@@ -128,6 +132,12 @@ public class PlayerController : MonoBehaviour
         // 점프 버퍼: 점프키를 누르면 잠시 기억해둔다
         if (jumpPressed) jumpBufferCounter = jumpBuffer;
         else jumpBufferCounter -= Time.deltaTime;
+
+        if (interactionPressed && _goal != null)
+        {
+            _goal.Interact();
+        }
+            
     }
 
     // ───────────── 공용 헬퍼 ─────────────
@@ -257,6 +267,11 @@ public class PlayerController : MonoBehaviour
             _respawnPosition = other.transform.position;
             other.gameObject.GetComponent<CheckPoint>().Set();
         }
+
+        if (other.gameObject.TryGetComponent<Goal>(out var goal))
+        {
+            _goal = goal;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -264,6 +279,11 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Portal"))
         {
             _portal = null;
+        }
+        
+        if (other.gameObject.TryGetComponent<Goal>(out var goal))
+        {
+            _goal = null;
         }
     }
 
