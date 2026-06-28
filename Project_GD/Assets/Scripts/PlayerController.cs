@@ -46,6 +46,9 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public float coyoteCounter;
     [HideInInspector] public float jumpBufferCounter;
 
+    [SerializeField]
+    private AudioSource _jumpSound;
+    
     // ── 상태머신 ──
     public PlayerState CurrentState { get; private set; }
     public IdleState idleState;
@@ -186,6 +189,8 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
+        _jumpSound.Stop();
+        _jumpSound.Play();
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         coyoteCounter = 0; // 연속 점프 방지
         jumpBufferCounter = 0;
